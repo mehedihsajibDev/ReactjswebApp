@@ -5,7 +5,7 @@ export default function Firspage({setpage}) {
   return (
     <>
      <Typography>
-      <h2>Which Programming language do you like??</h2>
+      <h2>Which Programming language do you like???</h2>
      </Typography>
 
      <CardSection>
