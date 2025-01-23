@@ -1,27 +1,26 @@
 import React from 'react'
 import {  Btnsection, Cardp, CardSectionp, Typography } from '../../styles/Common.Styled'
 
-export default function Previewpage({setpage}) {
+export default function Previewpage({setpage,surveyData}) {
   return (
     <>
         <Typography>
           <h2>This is your Preview  Page//</h2>
-          
         </Typography>
 
       <CardSectionp>
         <Cardp>
           <h2>Which Programming Language do you love?</h2>
-          <span>Which Programming Language do you love?</span>
+          <span>{surveyData.language}</span>
         </Cardp>
         <Cardp>
         <h2>You Experince</h2>
-        <p>Answere:</p>
+        <p>Answere:{surveyData.experince}</p>
         </Cardp>
   
         <Cardp>
         <h2>Your Favourite youtube chanel</h2>
-        <p>Answere:</p>
+        <p>Answere:{surveyData.favouritechanel}</p>
         </Cardp>
       </CardSectionp>
       <Btnsection>

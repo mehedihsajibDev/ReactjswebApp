@@ -1,7 +1,7 @@
 import React from 'react'
 import { Btnsection, Card, CardSection, Typography } from '../../styles/Common.Styled'
-
-export default function Thirdpage({setpage}) {
+import { thirdpagedata } from './data'
+export default function Thirdpage({setpage, surveyData, setsurveyData}) {
   return (
            <>
               <Typography>
@@ -10,16 +10,13 @@ export default function Thirdpage({setpage}) {
               </Typography>
         
               <CardSection>
-                    <Card>
-                      <h2>Stack Learner</h2>
+                {
+                    thirdpagedata.map((item,index)=>(
+                    <Card style={{border:surveyData.favouritechanel.includes(item.name) ? "2px solid gray":""}} key={index} onClick={()=> setsurveyData({...surveyData,favouritechanel:[...surveyData.favouritechanel, item.name]})}>
+                      <h2>{item.name}</h2>
                     </Card>
-                    <Card>
-                      <h2>Code Abc</h2>
-                    </Card>
-              
-                    <Card>
-                      <h2>Learn with sumit</h2>
-                    </Card>
+                    ))
+                }
               </CardSection>
               <Btnsection>
               <button className='prev' onClick={()=>setpage(prevPage=>prevPage-1)}>Previous</button>

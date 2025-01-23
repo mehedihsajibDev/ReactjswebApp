@@ -2,7 +2,8 @@
 import React from 'react'
 import { Btnsection, CardSection, Typography } from '../../styles/Common.Styled'
 
-export default function Secondpage({setpage}) {
+export default function Secondpage({setpage, surveyData, setsurveyData}) {
+  console.log(' :', surveyData );
   return (
       <>
           <Typography>
@@ -12,7 +13,9 @@ export default function Secondpage({setpage}) {
     
           <CardSection>
           
-          <input type="number" name="" value=""/>
+          <input type="number" value={surveyData.experince} onChange={e=>setsurveyData({...surveyData, experince: e.target.value})}/>
+
+         
           </CardSection>
           <Btnsection>
           <button className='prev' onClick={()=>setpage(prevPage=>prevPage-1)}>Previous</button>
